@@ -67,8 +67,8 @@ share.MeteorDreddEmitter.on 'test fail', Meteor.bindEnvironment((test) =>
 
 share.MeteorDreddEmitter.on 'test error', Meteor.bindEnvironment((error, test) =>
   t_result = _getBaseResult test
-  t_result.failureMessage = error
-  t_result.failureStackTrace = error
+  t_result.failureMessage = error.message
+  t_result.failureStackTrace = error.stack
 
   Meteor.call 'velocity/reports/submit', t_result
 )
