@@ -38,8 +38,8 @@ _run = ->
       silent: true
       sorted: true
       path: [
-        "#{process.env.PWD}/apiary.apib",
-        "**/*/#{FRAMEWORK_NAME}/blueprints/*"
+        "**/*/#{FRAMEWORK_NAME}/blueprints/*.apib",
+        "**/*/#{FRAMEWORK_NAME}/blueprints/*.md"
       ]
       hookfiles: [
         "**/*/#{FRAMEWORK_NAME}/hooks/*.js"

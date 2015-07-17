@@ -33,14 +33,16 @@ Package.onTest(function(api) {
 
 ## Basic Usage
 
-Write your blueprint file just as you would anyways. This package assumes the
-API Blueprint file in your root directory of the project with the name
-`apiary.apib` as usual. But you can add multiple blueprint files for testing. To
-do so, create the common directory structure `tests/dredd/blueprints/`. Inside
-that directory  you can place custom API blueprints, that dredd will use.
+Write your blueprint file just as you would anyways. Now, create the common
+directory structure `tests/dredd/blueprints/` and `tests/dredd/hooks/`. Inside
+those directories  you can place custom API blueprints and hooks, that dredd will use.
 
-You can place your hooks inside `tests/dredd/hooks/` and dredd will use them,
-too.
+To make dredd use your blueprints and automatically rerun tests, when the
+blueprint changes, you might one to create a symlink:
+
+``` shell
+ln -s apiary.apib packages/your-package/tests/dredd/blueprints/
+```
 
 To run the tests and display them with Velocity run something like this on your
 command line
