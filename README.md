@@ -24,9 +24,9 @@ Package.onTest(function(api) {
   api.use('storeness:meteor-dredd');
 
   api.addFiles([
-    'tests/dredd/hooks/commonHooks.js'
-    'tests/dredd/hooks/specialHooks.js'
-    'tests/dredd/blueprints/anotherBlueprint.apib'
+    'tests/dredd/hooks/commonHooks.js',
+    'tests/dredd/hooks/specialHooks.js',
+    'tests/dredd/blueprints/apiary.apib'
   ], 'server', {isAsset: true})
 })
 ```

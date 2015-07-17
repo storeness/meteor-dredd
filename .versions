@@ -36,7 +36,7 @@ sanjo:meteor-files-helpers@1.1.0_6
 sanjo:meteor-version@1.0.0
 spacebars@1.0.6
 spacebars-compiler@1.0.6
-storeness:meteor-dredd@0.9.1
+storeness:meteor-dredd@0.9.2
 templating@1.1.1
 tracker@1.0.7
 ui@1.0.6
