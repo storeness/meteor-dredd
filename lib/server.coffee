@@ -43,6 +43,8 @@ _run = ->
       ]
       hookfiles: [
         "**/*/#{FRAMEWORK_NAME}/hooks/*.js"
+        "**/*/#{FRAMEWORK_NAME}/hooks/*.coffee"
+        "**/*/#{FRAMEWORK_NAME}/hooks/*.litcoffee"
       ]
     emitter: share.MeteorDreddEmitter
 
