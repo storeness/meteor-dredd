@@ -1,6 +1,6 @@
 Package.describe({
   name: 'storeness:meteor-dredd',
-  version: '0.9.5',
+  version: '0.9.6',
   summary: 'API Testing framework Dredd for Velocity',
   git: 'https://github.com/storeness/meteor-dredd',
   documentation: 'README.md',

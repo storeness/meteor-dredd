@@ -4,13 +4,11 @@ FRAMEWORK_NAME = 'dredd'
 
 _getBaseResult = (test) ->
   _getResult = (test) ->
-    if test.status is 'skip'
-      'pending'
-    else
-      if test.valid
-        'passed'
-      else
-        'failed'
+    switch test.status
+      when 'skip' then 'pending'
+      when 'fail' then 'failed'
+      when 'pass' then 'passed'
+      else 'failed'
 
   {
     id: "#{FRAMEWORK_NAME}:#{test.origin.apiName}:#{test.origin.resourceGroupName}:#{test.origin.resourceName}:#{test.origin.actionName}:#{test.origin.exampleName}"
@@ -47,6 +45,7 @@ share.MeteorDreddEmitter.on 'test skip', Meteor.bindEnvironment((test) =>
 )
 
 share.MeteorDreddEmitter.on 'test fail', Meteor.bindEnvironment((test) =>
+  console.log(test) if test.title is 'POST /datasets/1/datapoints'
   t_result = _getBaseResult test
   t_result.failureMessage = test.message
   t_result.failureStackTrace = """
