@@ -35,7 +35,7 @@ _run = ->
   dredd = new Dredd
     server: Meteor.absoluteUrl()
     options:
-      silent: DEBUG
+      silent: !DEBUG
       sorted: true
       path: [
         "**/*/#{FRAMEWORK_NAME}/blueprints/*.apib",
