@@ -45,7 +45,6 @@ share.MeteorDreddEmitter.on 'test skip', Meteor.bindEnvironment((test) =>
 )
 
 share.MeteorDreddEmitter.on 'test fail', Meteor.bindEnvironment((test) =>
-  console.log(test) if test.title is 'POST /datasets/1/datapoints'
   t_result = _getBaseResult test
   t_result.failureMessage = test.message
   t_result.failureStackTrace = """
